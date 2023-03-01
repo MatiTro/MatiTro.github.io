@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stan paletowy</title>
+    <link rel="stylesheet" href="/Stan_paletowy_surowce/Stan_paletowy_surowce.css" type="text/css" />
+    <link href="/img/logo-karta.png" rel="icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Aboreto"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <body>
+      <header>
+    
+        <div class="main-logo">
+          <a id="logo" href="/index.html">
+            <img class="logo" src="/img/logo.png" />
+          </a>
+        </div>
+     
+    </header>
+      
+    <div class="box-conatiner">
+        <div class="box box1">
+          <div class="content">
+            <h1>Oblicz ilość palet</h1>
+            <div class="tytul2">
+              <p>Wpisz dane aby wykonać obliczenie</p>
+            </div>
+            <form>
+              <div class="free"><p>Ile jest wolnych miejsc ?</p></div>
+              <input type="number" id="free" placeholder="Wpisz ilość wolnych miejsc" />
+              <div class="rawmaterial"><p>Ile palet jest na bufor / II hala / rampa ?</p></div>
+              <input
+                type="number"
+                id="rawmaterial"
+                placeholder="Wpisz łączną ilość palet"
+              />
+              <div class="Andersa"><p>Ile palet jest na Andersa ?</p></div>
+              <input
+                type="number"
+                id="andersa"
+                placeholder="Wpisz ilość palet na Andersa"
+              />
+              <div class="finished_product "><p>Ile palet jest wyrobu gotowego ?</p></div>
+              <input
+                type="number"
+                id="finished_product"
+                placeholder="Wpisz ilość palet wyrobu gotowego"
+              />
+              <button class="btn btn1" type="button" id="btn1" onclick="countresult()">Oblicz</button>
+            </form>
+          </div>
+        </div>
+        <div class="box box2">
+          <div class="content">
+            <h1>Suma palet na Magazynie</h1>
+            <p>Poniżej jest wynik łącznej ilości palet </p>
+            <div class="result" id="result"></div>
+            <button class="btn btn2" onclick="sendEmail()">Wyślij e-mail</button>
+
+
+
+            
+
+          </div>
+        </div>
+        
+        <div class="box box3">
+          <div class="content">
+            <h1>Historia</h1>
+            <div class="history" id="history"></div>
+            <p>Data: <span id="date"></span></p>
+            <p>Wolne: <span id="free"></span></p>
+            <p>Bufor: <span id="rawmaterial"></span></p>
+            <p>Wyrób gotowy: <span id="finished_product"></span></p>
+            <p>Andersa: <span id="andersa"></span></p>
+            <p>Całkowita ilość palet: <span id="result"></span></p>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+      <footer>
+      
+        <p class="autor">Wykonał - Mateusz Trochimowicz</p>
+      
+    </footer>
+    </div>
+    <script src="/Stan_paletowy_surowce/Stan_paletowy_surowce.js"></script>
+  </body>
+</html>
