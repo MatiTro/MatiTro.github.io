@@ -15,6 +15,11 @@ filterOption.addEventListener("click", filterTodo);
 function addTodo(e) {
   //Prevent natural behaviour
   e.preventDefault();
+  //Check if todoInput is not empty
+  if (todoInput.value.trim() === "") {
+    alert("Proszę o wpisanie zadania");
+    return;
+  }
   //Create todo div
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
@@ -51,7 +56,7 @@ function deleteTodo(e) {
     todo.classList.add("fall");
     //at the end
     removeLocalTodos(todo);
-    todo.addEventListener("transitionend", e => {
+    todo.addEventListener("transitionend", (e) => {
       todo.remove();
     });
   }
@@ -64,7 +69,7 @@ function deleteTodo(e) {
 
 function filterTodo(e) {
   const todos = todoList.childNodes;
-  todos.forEach(function(todo) {
+  todos.forEach(function (todo) {
     switch (e.target.value) {
       case "all":
         todo.style.display = "flex";
@@ -115,7 +120,7 @@ function getTodos() {
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
-  todos.forEach(function(todo) {
+  todos.forEach(function (todo) {
     //Create todo div
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");

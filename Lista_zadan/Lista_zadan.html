@@ -34,12 +34,25 @@
         <i class="fas fa-plus-square"></i>
       </button>
       <div class="select">
-        <select name="todos" class="filter-todo">
-          <option value="all">Wszystkie</option>
-          <option value="completed">Zrobione</option>
-          <option value="uncompleted">Nie zrobione</option>
+        <select name="priority" class="filter-todo">
+          <option value="lack">Brak priorytetu</option>
+          <option value="low">Pilne<img src="https://www.flaticon.com/svg/static/icons/svg/1828/1828665.svg" width="16" height="16"></option>
+
+          
+
+          <option value="high">Bardzo pilne</option>
         </select>
+        
       </div>
+        <div class="select">
+          <select name="todos" class="filter-todo">
+            <option value="all">Wszystkie</option>
+            <option value="completed">Zrobione</option>
+            <option value="uncompleted">Nie zrobione</option>
+          </select>
+        </div>
+      </form>
+      
     </form>
     <div class="todo-container">
       <ul class="todo-list"></ul>

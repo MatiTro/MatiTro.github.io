@@ -32,6 +32,7 @@ form button {
   background: #f7fffe;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-right: 0.5rem;
 }
 form button:hover {
   background: #1b3060;
@@ -58,9 +59,7 @@ form button:hover {
   align-items: center;
   transition: all 1s ease;
 }
-.filter-todo {
-  padding: 1rem;
-}
+
 .todo li {
   flex: 1;
 }
@@ -87,7 +86,7 @@ form button:hover {
 }
 
 .fall {
-  transform: translateY(10rem) rotateZ(20deg);
+  transform: translateY(10rem);
   opacity: 0;
 }
 
@@ -95,7 +94,9 @@ form button:hover {
   text-decoration: line-through;
   opacity: 0.5;
 }
-
+.filter-todo {
+  padding: 1rem;
+}
 /*CUSTOM SELECTOR */
 select {
   -webkit-appearance: none;
@@ -104,13 +105,13 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  border: 0 !important;
-  background-image: none;
+  border: 0;
+  background: white;
 }
 
 /* Custom Select */
 .select {
-  margin: 1rem;
+  margin: 0.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -131,21 +132,16 @@ select {
   cursor: pointer;
   pointer-events: none;
 }
-/* Transition */
-/*
-.select:hover::after {
-  transform: scale(1.5);
-}
-*/
+
 #header {
-  background-color: whitesmoke;
+  background-color: white;
   color: white;
   text-align: center;
   height: auto;
   width: auto;
 }
 #footer {
-  background-color: whitesmoke;
+  background-color: white;
   color: black;
   text-align: center;
   position: fixed;
@@ -181,4 +177,51 @@ p {
 }
 .container {
   height: 100%;
+}
+
+.todo-list {
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.priority-low::before {
+  content: "!";
+  color: yellow;
+  margin-right: 0.5rem;
+}
+
+.priority-high::before {
+  content: "!";
+  color: red;
+  margin-right: 0.5rem;
+}
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  form {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .btn {
+    margin: 10px auto;
+  }
+  .tasks {
+    width: 100%;
+    margin: 0;
+  }
+  .todo-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .todo-input {
+    width: 100%;
+  }
 }
