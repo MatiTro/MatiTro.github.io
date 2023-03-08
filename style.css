@@ -111,7 +111,13 @@ p {
   width: 200px;
   display: inline-block;
   height: auto;
+  display: inline-block;
+  transition: transform 0.3s ease-out;
 }
+.logo:hover {
+  transform: scale(1.2);
+}
+
 #logo {
   margin-bottom: 5px;
   margin-top: 0;
