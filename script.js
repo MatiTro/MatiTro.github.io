@@ -6,3 +6,8 @@ liElements.forEach((li) => {
     window.location.href = li.querySelector("a").href;
   });
 });
+
+var loader = document.getElementById("bodyloading");
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});

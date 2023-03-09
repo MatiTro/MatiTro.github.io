@@ -1,9 +1,10 @@
-body {
+#bodyloading {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
   background: linear-gradient(#565e72, #1b3060);
+  overflow: hidden;
 }
 
 .loading {
