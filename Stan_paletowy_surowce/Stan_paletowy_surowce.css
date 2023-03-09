@@ -119,7 +119,13 @@ input[type="number"] {
   width: 200px;
   display: inline-block;
   height: auto;
+  display: inline-block;
+  transition: transform 0.3s ease-out;
 }
+.logo:hover {
+  transform: scale(1.2);
+}
+
 #logo {
   margin-bottom: 5px;
   margin-top: 0;
@@ -130,6 +136,12 @@ input[type="number"] {
   margin-top: 1px;
   width: auto;
 }
+.slider li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .autor {
   font-weight: normal;
   font-size: 100%;
