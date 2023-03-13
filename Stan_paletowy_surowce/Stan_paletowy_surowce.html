@@ -7,14 +7,38 @@
     <title>Stan paletowy</title>
     <link rel="stylesheet" href="/Stan_paletowy_surowce/Stan_paletowy_surowce.css" type="text/css" />
     <link href="/img/logo-karta.png" rel="icon" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Aboreto"
-      rel="stylesheet"
-    />
+   
+    <!-- Fonty z googla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">   
+<!-- Alert -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
   </head>
+
   
   <body>
-      <header>
+    
+    <div class="alert hide">
+      <span class="fas fa-exclamation-circle"></span>
+      <span class="msg"><strong>Uwaga!</strong> Proszę wprowadzić dane</span>
+      <div class="close-btn">
+         <span class="fas fa-times"></span>
+      </div>
+   </div>
+    
+    <header>
     
         <div class="main-logo">
           <a id="logo" href="/index.html">
@@ -33,21 +57,24 @@
             </div>
             <form>
               <div class="free"><p>Ile jest wolnych miejsc ?</p></div>
-              <input type="number" id="free" placeholder="Wpisz ilość wolnych miejsc" />
+              <input type="number" min="0" id="free" placeholder="Wpisz ilość wolnych miejsc" />
               <div class="rawmaterial"><p>Ile palet jest na bufor / II hala / rampa ?</p></div>
               <input
+              min="0"
                 type="number"
                 id="rawmaterial"
                 placeholder="Wpisz łączną ilość palet"
               />
               <div class="Andersa"><p>Ile palet jest na Andersa ?</p></div>
               <input
+              min="0"
                 type="number"
                 id="andersa"
                 placeholder="Wpisz ilość palet na Andersa"
               />
               <div class="finished_product "><p>Ile palet jest wyrobu gotowego ?</p></div>
               <input
+              min="0"
                 type="number"
                 id="finished_product"
                 placeholder="Wpisz ilość palet wyrobu gotowego"
@@ -56,10 +83,14 @@
             </form>
           </div>
         </div>
+       
+       
+       
+       
         <div class="box box2">
           <div class="content">
             <h1>Suma palet na Magazynie</h1>
-            <p>Poniżej jest wynik łącznej ilości palet </p>
+            <p class="textboxnumber2">Poniżej jest wynik łącznej ilości palet </p>
             <div class="result" id="result"></div>
             <button class="btn btn2" onclick="sendEmail()">Wyślij e-mail</button>
 
@@ -72,13 +103,25 @@
         
         <div class="box box3">
           <div class="content">
-            <h1>Historia</h1>
-            <div class="history" id="history"></div>
-            <div class="result" id="result"></div>
-            <input type="number" id="free" placeholder="Wpisz ilość wolnych miejsc" />
-            
-            <input type="number" id="free" placeholder="Wpisz ilość wolnych miejsc" />
-          </div>
+            <h1>Ilość palet wydanych</h1>
+            <div class="yesterday"><p>Ile palet łącznie było poprzedniego dnia ?</p></div>
+              <input
+              min="0"
+                type="number"
+                id="yesterday"
+                placeholder="Wpisz ilość palet z dnia poprzedniego"
+              />
+              <div class="delivery_yesterday"><p>Ile palet przyjętych z poprzedniego dnia ?</p></div>
+              <input
+              min="0"
+                type="number"
+                id="delivery_yesterday"
+                placeholder="Wpisz ilość palet przyjętych z dnia poprzedniego"
+              />
+              <p>Poniżej jest wynik ilości palet wydanych </p>
+              <div class="resultspent" id="result_spent"></div>
+              <button class="btn btn2" type="button" id="btn2" onclick="resultspentpallets()">Oblicz</button>
+            </div>
         </div>
         
         
@@ -86,7 +129,7 @@
     </div>
       <footer>
       
-        <p class="autor">Wykonał - Mateusz Trochimowicz</p>
+        <p class="autor">Made by - Mateusz Trochimowicz</p>
       
     </footer>
     </div>
